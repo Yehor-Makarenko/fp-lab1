@@ -20,11 +20,10 @@ jobs:
       - name: Install dependencies
         run: npm install
 
-      - name: Create artifact
-        run: zip -r my-express-app.zip .
-
       - name: Upload artifact
-        uses: actions/upload-artifact@v3
+        uses: actions/upload-artifact@v4
         with:
-          name: my-express-app
-          path: my-express-app.zip
+          name: my-server
+          path: |
+            .
+            !node_modules
