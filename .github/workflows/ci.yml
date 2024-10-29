@@ -22,10 +22,12 @@ jobs:
 
       - name: Create artifact
         run: zip -r artifact.zip .
-         # Змініть на ваш шлях до артефакту
 
       - name: Upload artifact
         uses: actions/upload-artifact@v4
         with:
           name: my-server
           path: artifact.zip
+
+      - name: Run tests
+        run: npm test
