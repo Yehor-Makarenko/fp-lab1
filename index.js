@@ -7,7 +7,7 @@ app.get('/products/:productId', (req, res) => {
     
     res.json({
         id: productId,
-        name: `${productId} name`,
+        name: `Product ${productId} name`,
         category,
     });
 });
