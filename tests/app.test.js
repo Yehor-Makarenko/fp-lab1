@@ -1,9 +1,13 @@
 const request = require('supertest');
-const app = require('../index.js'); // Імпортуємо ваш Express-додаток
+const server = require('../index.js'); // Імпортуємо ваш Express-додаток
+
+afterAll(() => {  
+  server.close();
+});
 
 describe('GET /products/:productId', () => {
   test('should return a product with the correct id and name', async () => {
-    const response = await request(app).get('/products/1');
+    const response = await request(server).get('/products/1');
     
     expect(response.status).toBe(200);
     expect(response.body).toEqual({
