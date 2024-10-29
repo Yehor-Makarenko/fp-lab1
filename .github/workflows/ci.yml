@@ -30,4 +30,4 @@ jobs:
           path: artifact.zip
 
       - name: Run tests
-        run: npm test
+        run: npx jest
