@@ -40,3 +40,10 @@ jobs:
         with:
           name: test-report
           path: reports/jest/junit.xml # Вкажіть шлях до звіту
+
+      - name: Publish test results
+        uses: dorny/test-reporter@v1
+        with:
+          name: Jest Tests
+          path: reports/jest/junit.xml
+          reporter: jest
