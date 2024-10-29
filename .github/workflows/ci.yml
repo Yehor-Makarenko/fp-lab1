@@ -16,8 +16,10 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: SonarQube Scan
-        run: sonar-scanner.bat -D"sonar.projectKey=FP-lab2" -D"sonar.sources=." -D"sonar.host.url=http://localhost:9000" -D"sonar.token=sqp_e8ce00b9889e7473d3ede44de0d6a41e695b6556"
+      - uses: sonarsource/sonarqube-scan-action@v3
+        env:
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
 
       - name: Set up Node.js
         uses: actions/setup-node@v4
