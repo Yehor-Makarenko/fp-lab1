@@ -8,6 +8,10 @@ jobs:
   build:
     runs-on: ubuntu-latest
 
+    permissions:
+      contents: read
+      actions: read
+
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -47,4 +51,3 @@ jobs:
           name: Jest Tests
           path: reports/jest/junit.xml
           reporter: jest-junit
-          token: ${{ secrets.GITHUB_TOKEN }}
