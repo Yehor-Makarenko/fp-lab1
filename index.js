@@ -3,10 +3,12 @@ const app = express();
 
 app.get('/products/:productId', (req, res) => {
     const productId = req.params.productId;
+    const category = `Category ${productId}`;
     
     res.json({
         id: productId,
-        name: `${productId} name`
+        name: `${productId} name`,
+        category,
     });
 });
 
