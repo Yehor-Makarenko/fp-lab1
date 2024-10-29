@@ -6,7 +6,7 @@ on:
 
 jobs:
   build:
-    runs-on: windows-latest
+    runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
@@ -28,6 +28,9 @@ jobs:
         with:
           name: my-server
           path: artifact.zip
+
+      - name: Give execution permission
+        run: chmod +x ./node_modules/.bin/jest
 
       - name: Run tests
         run: npm test
