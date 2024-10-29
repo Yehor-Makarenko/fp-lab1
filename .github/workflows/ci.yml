@@ -21,7 +21,7 @@ jobs:
         run: npm install
 
       - name: Create artifact
-        run: zip -r artifact.zip . -x "node_modules"        
+        run: zip -r artifact.zip ."        
          # Змініть на ваш шлях до артефакту
 
       - name: Upload artifact
