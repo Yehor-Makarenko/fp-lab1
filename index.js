@@ -55,7 +55,7 @@ app.get('/products/:productId', async (req, res) => {
 
 app.get('/product', async (req, res) => {
     const response = await axios.get('https://jsonplaceholder.typicode.com/todos/1');
-    res.json(response.data);
+    res.json(response.data + " ");
 });
 
 const PORT = 3002;
